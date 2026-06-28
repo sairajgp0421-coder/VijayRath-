@@ -1,0 +1,6 @@
+{
+  "name": "VijayRath Namkeen & Bakery",
+  "description": "Authentic Gujarati culinary farsan, bakery, and fresh namkeen store.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

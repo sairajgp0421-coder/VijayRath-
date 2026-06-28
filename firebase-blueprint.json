@@ -1,0 +1,54 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "A food product or snack item available in the storefront",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "gujaratiName": { "type": "string" },
+        "category": { "type": "string" },
+        "price": { "type": "number" },
+        "unit": { "type": "string" },
+        "availableWeights": { "type": "array" },
+        "imageUrl": { "type": "string" },
+        "description": { "type": "string" },
+        "rating": { "type": "number" },
+        "reviewCount": { "type": "number" },
+        "stockText": { "type": "string" },
+        "stockLevel": { "type": "number" },
+        "isFresh": { "type": "boolean" },
+        "isLowStock": { "type": "boolean" },
+        "isOutOfStock": { "type": "boolean" }
+      },
+      "required": ["id", "name", "category", "price", "unit", "availableWeights", "imageUrl", "description", "rating", "reviewCount", "stockText", "stockLevel"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "An order placed by a customer",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "items": { "type": "array" },
+        "totalPrice": { "type": "number" },
+        "status": { "type": "string" },
+        "deliveryAddress": { "type": "object" },
+        "paymentMethod": { "type": "string" },
+        "datePlaced": { "type": "string" }
+      },
+      "required": ["id", "date", "items", "totalPrice", "status", "deliveryAddress", "paymentMethod", "datePlaced"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Available products in the storefront"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Orders placed by clients"
+    }
+  }
+}
